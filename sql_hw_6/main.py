@@ -27,7 +27,7 @@ def account_parameters(query_text:str):
     
     for i in new_list:
         if i[0] == ":":
-            param_set.add(i.replace(")", ""))
+            param_set.add(i.translate({ord(i): None for i in "():"}))
     
     return len(param_set)
 
